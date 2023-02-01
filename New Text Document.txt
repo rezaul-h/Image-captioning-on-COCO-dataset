@@ -1,0 +1,73 @@
+------------------------------------------------------------------------------------------------------------
+Code:
+--> data collect (COCO dataset download)
+	--> Folder : Coco Dataset 
+--> Folder : Data (Mapping captions with image id)
+--> Data preprocessing.ipynb : Dividing the dataset into train, test, and validation(csv file)
+
+Algorithms:
+--> ResNet + LSTM.ipynb : 1st algorithm
+--> VGG16+LSTM.ipynb: 2nd algorithm
+--> Inceptionv3+LSTM.ipynb: 3rd algorithm
+--> InceptionV3 + BiLSTM : 4th algorithm
+
+------------------------------------------------------------------------------------------------------------
+Objctive:
+--> Building a image captioning model with the use of DNN layers
+--> Achieving higher performance gain on the basis of Bleu score for greedy search and Beam search k=3
+--> Comparative performance analysis was provided (for the first time)
+
+------------------------------------------------------------------------------------------------------------
+Achieved: 52% (till now)
+------------------------------------------------------------------------------------------------------------
+BLEU Score	Interpretation
+< 10		Almost useless
+10 - 19	Hard to get the gist
+20 - 29	The gist is clear, but has significant grammatical errors
+30 - 40	Understandable to good translations
+40 - 50	High quality translations
+50 - 60	Very high quality, adequate, and fluent translations
+> 60		Quality often better than human
+-------------------------------------------------------------------------------------------------------------
+
+Data split:
+	Traning data : (image_name, Image_caption)	--> 7000
+	validation data : (image_name, Image_caption) --> 500
+	testing data : (image_name, Image_caption)--> 1500
+
+Data preprocessing:
+	Text preprocessing: abbreviation expand, [start], [end]
+	Image preprocessing:  resize
+
+Image feature extraction: train, test, val images (Resnet50) 
+Text feature extraction: LSTM
+
+training a model:
+	Training data : (image_name, Image_caption)
+	validation data : (image_name, Image_caption)
+
+Model prediction:
+	Test the model 
+		test data: (image_name)
+	Predict : pred_image_caption
+
+Evaluate:
+	bleu score(Image_caption,pred_image_caption)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+task:
+1. Word embedding (https://www.youtube.com/watch?v=Q95SIG4g7SA)
+	--> padding sequence
+	--> Word to index
+	--> index to word
+	--> vocab size
+	--> max length
+2. Data generator (https://www.youtube.com/watch?v=_L2uYfVV48I)
+3. image captioning (https://www.youtube.com/watch?v=fUSTbGrL1tc&t=3613s)
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
